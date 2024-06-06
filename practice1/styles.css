@@ -1,0 +1,143 @@
+#wrap {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+}
+
+#wrap::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#000, #0f0, #000);
+    animation: animate 2s linear infinite;
+    z-index: 0;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.animation-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    gap: 3px;
+    z-index: 1;
+}
+
+.animation-container>.square {
+    flex: 1 1 calc(5% - 3px);
+    background-color: #181818;
+    transition: background-color 0.5s;
+    aspect-ratio: 1;
+}
+
+.square:hover {
+    background-color: #0f0;
+    transition: 0s;
+}
+
+.login-container {
+    text-align: center;
+    width: 320px;
+    height: 340px;
+    background-color: #333;
+    padding: 50px;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 2;
+}
+
+.title {
+    color: #0f0;
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.id,
+.password {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.id input,
+.password input {
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+    padding-top: 15px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #555;
+    caret-color: #fff;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.id label,
+.password label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    color: #cbc9c9;
+    font-size: 16px;
+    border: none;
+    transform: translateY(-50%);
+    transition: 0.3s ease;
+}
+
+.id input:focus+label,
+.id input:valid+label,
+.password input:focus+label,
+.password input:valid+label {
+    top: 15px;
+    left: 10px;
+    font-size: 14px;
+    color: white;
+}
+
+.link {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 15px auto;
+}
+
+.link .Fp a {
+    text-decoration: none;
+    color: White;
+}
+
+.link .Su a {
+    text-decoration: none;
+    color: #0f0;
+}
+
+.Loginbtn button {
+    width: 100%;
+    height: 50px;
+    margin-top: 15px;
+    background-color: #0f0;
+    color: #555;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    box-sizing: border-box;
+}
